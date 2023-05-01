@@ -1,7 +1,7 @@
 const { Double } = require('mongodb')
 const mongodb = require('mongoose')
 const productSchema = new mongodb.Schema({
-    _id: mongodb.Types.ObjectId,
+    _id: mongodb.Schema.Types.ObjectId,
     productName: {
         type: String,
         required: true
