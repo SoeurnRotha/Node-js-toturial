@@ -4,6 +4,7 @@ const bodyparser = require('body-parser')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://SoeurnRotha:092671693@soeurnrotha.sgaabdc.mongodb.net/?retryWrites=true&w=majority";
 const morgan = require('morgan')
+const productRouter = require('./api/router/productRouter')
 app.use(morgan('dev'))
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: false}))
@@ -56,6 +57,6 @@ app.use((error, req,res, next) =>{
         }
     })
 })
-
-
+//router
+app.use('/', productRouter)
 module.exports = app
